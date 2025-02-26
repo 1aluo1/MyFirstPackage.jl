@@ -1,6 +1,8 @@
-using MyFirstPackage
+using MyFirstPackage, Graphs, TropicalNumbers
 using Test
 
-@testset "MyFirstPackage.jl" begin
-    # Write your tests here.
+@testset "shortest_path" begin
+    g = smallgraph(:petersen)
+    @test has_edge(g, 1, 2)
+    @test shortest_path(g)[1, 2].n == 1
 end
